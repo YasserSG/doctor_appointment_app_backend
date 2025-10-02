@@ -7,39 +7,46 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Acerca de Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects.
+Laravel es un framework de aplicación web con sintaxis expresiva y elegante. Creemos que el desarrollo debe ser una experiencia agradable y creativa para ser verdaderamente satisfactorio. Laravel elimina el dolor del desarrollo al facilitar las tareas comunes utilizadas en muchos proyectos web.
 
-## Project Configuration
+## Configuración del Proyecto
 
-### Configurations Implemented
+### Configuraciones Implementadas
 
-This project has been configured with the following settings:
+Este proyecto ha sido configurado con las siguientes configuraciones:
 
-#### Database Configuration
-- **MySQL Connection**: Successfully configured and operational
-- **Database**: Connected and functioning properly
+#### Configuración de Base de Datos
+- **Conexión MySQL**: Configurada y operativa exitosamente
+- **Base de Datos**: Conectada y funcionando correctamente
 
-#### Application Settings
-- **Timezone**: `America/Merida` - Configured for correct time display
-- **Default Language**: Spanish (`es`) - Interface and validations in Spanish
-- **Faker Locale**: `es_ES` - Spanish data for testing and seeding
+#### Configuración de la Aplicación
+- **Zona Horaria**: `America/Merida` - Configurada para mostrar la hora correcta
+- **Idioma Predeterminado**: Español (`es`) - Interfaz y validaciones en español
+- **Localización Faker**: `es_ES` - Datos en español para pruebas y seeding
 
-#### User Profile System
-- **Authentication**: Laravel Jetstream implemented
-- **Profile Photos**: Avatar system with automatic initial-based image generation
-- **User Management**: Complete authentication and profile management
+#### Sistema de Perfil de Usuario
+- **Autenticación**: Laravel Jetstream implementado
+- **Fotos de Perfil**: Sistema de avatares con generación automática basada en iniciales
+- **Gestión de Usuarios**: Autenticación completa y gestión de perfiles
 
-#### Technical Specifications
-- **PHP Version**: 8.2.12
-- **Laravel Framework**: Latest version
-- **Authentication**: Laravel Jetstream with Teams
-- **Frontend**: Livewire components with Tailwind CSS
+#### Panel Administrativo
+- **Layout Admin**: Layout administrativo personalizado con integración Flowbite
+- **Navegación**: Componentes de sidebar y navbar extraídos a includes
+- **Contenido Dinámico**: Sistema de slots implementado para renderizado flexible de contenido
+- **Framework UI**: Componentes Flowbite integrados para diseño consistente
 
-### 🚀 Installation and Setup
+#### Especificaciones Técnicas
+- **Versión PHP**: 8.2.12
+- **Framework Laravel**: Última versión
+- **Autenticación**: Laravel Jetstream con Equipos
+- **Frontend**: Componentes Livewire con Tailwind CSS + Flowbite
+- **Framework Admin**: Layout Blade personalizado con arquitectura de componentes
 
-1. **Clone the repository**
+### 🚀 Instalación y Configuración
+
+1. **Clonar el repositorio**
    ```bash
    git clone https://github.com/YasserSG/doctor_appointment_app_backend.git
    cd doctor-appointment-app

@@ -1,3 +1,4 @@
 <x-admin-layout>
- hola desde admin
+    Hola desde Admin
+
 </x-admin-layout>
