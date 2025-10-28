@@ -7,9 +7,9 @@
         <x-validation-errors class="mb-4" />
 
         @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ $value }}
+        </div>
         @endsession
 
         <form method="POST" action="{{ route('login') }}">
@@ -39,7 +39,7 @@
                     </a>
                 @endif
 
-                <x-button class="ms-4">
+                <x-button type="submit" class="ms-4">
                     {{ __('Log in') }}
                 </x-button>
             </div>
