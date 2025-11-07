@@ -13,7 +13,7 @@
                 <a href="{{ route('dashboard') }}" class="flex ms-2 md:me-24">
                     <img
                         src="{{ asset('images/doctor_appointment_app_logo.png') }}"
-                        class="h-10 me-3"
+                        class="h-10 me-3 rounded-lg"
                         alt="Logo Simify"
                     />
                     <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Simify</span>
@@ -106,7 +106,7 @@
 </aside>
 
 <div class="p-4 sm:ml-64">
-    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+   {{-- <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14"> --}}
         {{-- Aquí se insertará el contenido de tu vista admin.dashboard.blade.php o cualquier otra vista --}}
         {{-- Puedes usar la directiva @yield('content') o @section('content') si lo usas con herencia --}}
     </div>

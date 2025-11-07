@@ -1,11 +1,20 @@
-<x-admin-layout title="Roles | Healthify" :breadcrumb="[
+<x-layouts.admin title="Roles | Healthify" :breadcrumbs="[
     [
         'name' => 'Dashboard',
-        'route' => route('admin.dashboard'),
+        'href' => route('admin.dashboard'),
     ],
     [
-    'name' => 'Roles',
+        'name' => 'Roles',
+
     ],
 ]">
+    <x-slot name="action">
+        <x-wire-button blue href="{{route('admin.roles.create')}}">
+            <i class="fa-solid fa-plus"></i>
+            Nuevo
 
-<x-admin-layout>
+        </x-wire-button>
+    </x-slot>
+    @livewire('admin.datatable.role_table')
+
+</x-layouts.admin>
