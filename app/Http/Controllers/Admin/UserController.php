@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User; // <-- ¡Importante para el Criterio 1!
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 
-class RoleController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.roles.index');
+        // Criterio 2: Incluir la vista index
+        return view('admin.users.index');
     }
 
     /**
@@ -21,7 +22,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        // Criterio 2: Incluir la vista create
+        return view('admin.users.create');
     }
 
     /**
@@ -29,20 +31,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        /**validar que se cree bien **/
-        $request->validate(['name' => 'required|unique:roles,name']);
-
-        /** Si pasa la validacion, creará el rol**/
-        Role::create(['name' => $request->name]);
-
-         /** Redireccionará a la tabla principal**/
-        return redirect()->route('admin.roles.index')->with('success', 'Rol created successfully.');
+        // (Lo dejamos pendiente para después)
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(User $user)
     {
         //
     }
@@ -50,24 +45,25 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        // Criterio 2: Incluir la vista edit
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        // (Lo dejamos pendiente para después)
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        // (Lo dejamos pendiente para después)
     }
 }
