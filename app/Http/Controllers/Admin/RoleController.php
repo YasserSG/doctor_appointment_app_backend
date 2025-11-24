@@ -16,12 +16,17 @@ class RoleController extends Controller
         return view('admin.roles.index');
     }
 
+    // ----------------------------------------------------
+    //  CORRECCIONES PARA LA PANTALLA BLANCA
+    // ----------------------------------------------------
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        // El método debe retornar una vista.
+        return view('admin.roles.create');
     }
 
     /**
@@ -35,8 +40,17 @@ class RoleController extends Controller
         /** Si pasa la validacion, creará el rol**/
         Role::create(['name' => $request->name]);
 
-         /** Redireccionará a la tabla principal**/
-        return redirect()->route('admin.roles.index')->with('success', 'Rol created successfully.');
+
+        // variable de un solo uso para alertas
+        session()->flash('swal',
+        [
+           'icon' => 'success',
+           'title' => 'Rol creado correctamente!',
+            'text' => 'El rol ha sido creado exitosamente.',
+        ]);
+        /** Redireccionará a la tabla principal**/
+        return redirect()->route('admin.roles.index')
+             ->with('success', 'Rol created successfully.');
     }
 
     /**
@@ -52,7 +66,11 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // 1. Busca el rol que se quiere editar (si no existe, lanza 404).
+        $role = Role::findOrFail($id);
+
+        // 2. Retorna la vista de edición y le pasa el objeto $role.
+        return view('admin.roles.edit', compact('role'));
     }
 
     /**

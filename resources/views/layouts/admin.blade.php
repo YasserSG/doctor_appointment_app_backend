@@ -16,6 +16,8 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    {{-- Script para el sweetalert 2 o ventana de notificación --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <wireui:scripts />
 
@@ -30,10 +32,10 @@
 
 <div class="px-4 pb-4 sm:ml-64 pt-6">
 
-    <div class="flex justify-between items-center mb-4">
+    <div class="flex justify-between items-center mb-4 mt-2">
 
         @if (count($breadcrumbs))
-            <nav classs="flex">
+            <nav class="flex">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3 rtl:space-x-reverse">
 
                     @foreach ($breadcrumbs as $breadcrumb)
@@ -78,5 +80,13 @@
 @livewireScripts
 {{-- Esta es la única copia del script que necesitas --}}
 <script src="https://kit.fontawesome.com/b3054ece34.js" crossorigin="anonymous"></script>
+
+{{-- Mostrar Sweet Alert --}}
+@if (@session('swal'))
+    <script>
+        Swal.fire({!! json_encode(session('swal')) !!});
+    </script>
+@endif
+
 </body>
 </html>

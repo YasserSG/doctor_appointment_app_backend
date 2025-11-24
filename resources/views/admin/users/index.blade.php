@@ -21,4 +21,6 @@
         <p class="text-gray-700 dark:text-gray-400">Aquí se mostrará la tabla de usuarios (Rappasoft/Livewire).</p>
     </div>
 
+    @livewire('admin.datatable.user-table')
+
 </x-layouts.admin>
