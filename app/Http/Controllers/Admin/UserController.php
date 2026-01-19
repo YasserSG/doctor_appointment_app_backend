@@ -67,8 +67,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+       $roles = Role::all();
         // Criterio 2: Incluir la vista edit
-        return view('admin.users.edit', compact('user'));
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -76,7 +77,34 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        // (Lo dejamos pendiente para después)
+        $data = $request->validate([
+            'name' => 'required|string|min:3|max:255',
+            'email' => 'required|string|email|unique:users,email,' . $user->id,
+            'id_number' => 'required|string|min:5|max:20|regex:/^[A-Za-z0-9\-]+$/|unique:users,id_number,' . $user->id,
+            'phone' => 'required|digits_between:7,15',
+            'address' => 'required|string|min:3|max:255',
+            'role' => 'required|exists:roles,id',
+        ]);
+
+        $user->update($data);
+
+        //si el usuario quiere editar su contraseña, que lo guarde
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->password);
+            $user->save();
+        }
+
+        $user->roles()->sync($data['role_id']);
+
+
+        session()->flash('swal', [
+            'icon' => 'success',
+            'title' => 'Usuario actualizado',
+            'text' => 'El usuario ha sido actualizado exitosamente!.'
+
+        ]);
+
+        return redirect()->route('admin.users.edit', $user->id)->with('success', 'User updated successfully.');
     }
 
     /**
