@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User; // <-- ¡Importante para el Criterio 1!
 use Illuminate\Http\Request;
+use App\Models\Role;
 
 class UserController extends Controller
 {
@@ -22,8 +23,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        $roles = Role::all();
         // Criterio 2: Incluir la vista create
-        return view('admin.users.create');
+        return view('admin.users.create', compact('roles'));
     }
 
     /**
@@ -31,7 +33,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // (Lo dejamos pendiente para después)
+        $data = $request->validate([
+            'name' => 'required|string|min:3|max:255',
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+            'id_number' => 'required|string|min:5|max:20|regex:/^[A-Za-z0-9\-]+$/|unique:users',
+            'phone' => 'required|digits_between:7,15',
+            'address' => 'required|string|min:3|max:255',
+            'role' => 'required|exists:roles,id',
+        ]);
+
+        $user = User::create($data);
+        $user->assignRole($data['role_id']);
+
+        session()->flash('swal', [
+            'icon' => 'success',
+            'title' => 'Usuario creado',
+            'text' => 'El usuario ha sido creado exitosamente!.'
+            ]);
+        return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
     }
 
     /**
