@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User; // <-- ¡Importante para el Criterio 1!
 use Illuminate\Http\Request;
 use App\Models\Role;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -88,10 +89,14 @@ class UserController extends Controller
 
         $user->update($data);
 
+
         //si el usuario quiere editar su contraseña, que lo guarde
         if ($request->filled('password')) {
             $user->password = bcrypt($request->password);
             $user->save();
+
+            return redirect()->route('admin.users.index');
+
         }
 
         $user->roles()->sync($data['role_id']);
@@ -112,6 +117,26 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        // (Lo dejamos pendiente para después)
+      //Eliminar roles asociados a un usario
+        $user->roles()->detach();
+
+        // No permitir que el usuario logueado se borre a si mismo
+        if (Auth::user()->id === $user->id)  {
+            session()->flash('swal', [
+                'icon' => 'error',
+                'title' => 'error',
+                'text' => 'No se puede eliminar este usuario!',
+            ]);
+            abort(403, 'No puedes borrar tu mismo usuario');
+        }
+        //Eliminar el usuario
+        $user->delete();
+
+        session()->flash('swal', [
+            'icon' => 'success',
+            'title' => 'Usuario eliminado',
+            'text' => 'El usuario ha sido eliminado exitosamente!.'
+        ]);
+        return redirect()->route('admin.users.index')->with('success', 'User deleted successfully.');
     }
 }
