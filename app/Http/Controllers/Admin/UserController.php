@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Patient;
 use App\Models\User; // <-- ¡Importante para el Criterio 1!
 use Illuminate\Http\Request;
 use App\Models\Role;
@@ -52,6 +53,15 @@ class UserController extends Controller
             'title' => 'Usuario creado',
             'text' => 'El usuario ha sido creado exitosamente!.'
             ]);
+
+        //Si el usuario creado es un paciente envia el modulo paciente
+        if($user::role('Paciente')){
+            //Creamos el registro para un paciente
+            $patient = $user->patient()->create([]);
+            return redirect()->route('admin.patients.edit', $patient);
+
+        }
+
         return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
     }
 

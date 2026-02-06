@@ -18,9 +18,15 @@
        ],
        [
            'name' => 'Usuarios',
-          'icon' => 'fa-solid fa-users', // <-- Criterio 5: Ícono fa-users
+          'icon' => 'fa-solid fa-users',
           'href' => route('admin.users.index'),
           'active' => request()->routeIs('admin.users.*'),
+       ],
+       [
+           'name' => 'Pacientes',
+          'icon' => 'fa-solid fa-user-injured',
+          'href' => route('admin.patients.index'),
+          'active' => request()->routeIs('admin.patients.*'),
        ],
     ];
 @endphp
