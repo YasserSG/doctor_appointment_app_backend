@@ -1,0 +1,243 @@
+﻿
+   PASS  Tests\Unit\ExampleTest
+  Ô£ô that true iÔÇª 0.02s  
+
+   WARN  Tests\Feature\ApiTokenPermissionsTest
+  - api token pÔÇª 1.41s  
+
+   FAIL  Tests\Feature\AuthenticationTest
+  Ô£ô login screeÔÇª 0.86s  
+  Ô¿» users can aÔÇª 0.80s  
+  Ô£ô users cannoÔÇª 0.76s  
+
+   PASS  Tests\Feature\BrowserSessionsTest
+  Ô£ô other browsÔÇª 0.83s  
+
+   WARN  Tests\Feature\CreateApiTokenTest
+  - api tokensÔÇª  0.03s  
+
+   FAIL  Tests\Feature\DeleteAccountTest
+  Ô¿» user accounÔÇª 0.77s  
+  Ô£ô correct pasÔÇª 0.76s  
+
+   WARN  Tests\Feature\DeleteApiTokenTest
+  - api tokensÔÇª  0.03s  
+
+   WARN  Tests\Feature\EmailVerificationTest
+  - email verifÔÇª 0.03s  
+  - email can bÔÇª 0.03s  
+  - email can nÔÇª 0.03s  
+
+   FAIL  Tests\Feature\ExampleTest
+  Ô¿» it returnsÔÇª  0.79s  
+
+   PASS  Tests\Feature\InvalidUserUpdateTest
+  Ô£ô usuario autÔÇª 0.81s  
+
+   PASS  Tests\Feature\NonAdminUserDeleteTest
+  Ô£ô Usuario noÔÇª  0.76s  
+
+   PASS  Tests\Feature\PasswordConfirmationTest
+  Ô£ô confirm pasÔÇª 0.68s  
+  Ô£ô password caÔÇª 0.64s  
+  Ô£ô password isÔÇª 1.02s  
+
+   PASS  Tests\Feature\PasswordResetTest
+  Ô£ô reset passwÔÇª 0.74s  
+  Ô£ô reset passwÔÇª 1.00s  
+  Ô£ô reset passwÔÇª 0.98s  
+  Ô£ô password caÔÇª 0.93s  
+
+   PASS  Tests\Feature\ProfileInformationTest
+  Ô£ô current proÔÇª 0.77s  
+  Ô£ô profile infÔÇª 0.79s  
+
+   FAIL  Tests\Feature\RegistrationTest
+  Ô£ô registratioÔÇª 0.77s  
+  - registratioÔÇª 0.03s  
+  Ô¿» new users cÔÇª 1.68s  
+
+   PASS  Tests\Feature\SimpleTest
+  Ô£ô simple examÔÇª 0.04s  
+
+   PASS  Tests\Feature\TwoFactorAuthenticationSettingsTest
+  Ô£ô two factorÔÇª  0.88s  
+  Ô£ô recovery coÔÇª 0.97s  
+  Ô£ô two factorÔÇª  0.91s  
+
+   PASS  Tests\Feature\UnauthenticatedUserUpdateTest
+  Ô£ô Un usuarioÔÇª  0.81s  
+
+   PASS  Tests\Feature\UpdatePasswordTest
+  Ô£ô password caÔÇª 0.84s  
+  Ô£ô current pasÔÇª 0.83s  
+  Ô£ô new passworÔÇª 0.84s  
+
+   PASS  Tests\Feature\UserSelfDeleteTest
+  Ô£ô El usuarioÔÇª  0.87s  
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\Feature\AuthenticationTest > users can authenticate using the login screen  RouteNotFoundException   
+  Route [dashboard] not defined.
+
+  at vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:517
+    513Ôûò             ! is_null($url = call_user_func($this->missingNamedRouteResolver, $name, $parameters, $absolute))) {
+    514Ôûò             return $url;
+    515Ôûò         }
+    516Ôûò 
+  Ô×£ 517Ôûò         throw new RouteNotFoundException("Route [{$name}] not defined.");
+    518Ôûò     }
+    519Ôûò 
+    520Ôûò     /**
+    521Ôûò      * Get the URL for a given route instance.
+
+  1   vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:517
+  2   vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:853
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeaÔÇª   
+  Failed asserting that App\Models\User Object #3085 (
+    'connection' => 'sqlite',
+    'table' => 'users',
+    'primaryKey' => 'id',
+    'keyType' => 'int',
+    'incrementing' => true,
+    'with' => Array &0 [],
+    'withCount' => Array &1 [],
+    'preventsLazyLoading' => false,
+    'perPage' => 15,
+    'exists' => true,
+    'wasRecentlyCreated' => false,
+    'escapeWhenCastingToString' => false,
+    'attributes' => Array &2 [
+        'id' => 1,
+        'name' => 'Electa Kihn',
+        'email' => 'vanessa11@example.com',
+        'email_verified_at' => '2026-03-19 16:44:10',
+        'password' => '$2y$04$JsEuv7qn8epqGHeKd86.3u4SC3HFEjyReaw8sJ2QdDBacCwD2Tozu',
+        'id_number' => '7140586402',
+        'phone' => '(442) 895-8334',
+        'address' => '656 Amaya Green Apt. 941\n
+Dejahtown, OK 60961-1270',
+        'remember_token' => 'zanO8bgp02PYqvlvRFnDvZUD6CuA3TvFvKG6RoFt0BstQ1fmQ2hgC6bYUdiO',
+        'current_team_id' => null,
+        'profile_photo_path' => null,
+        'created_at' => '2026-03-19 16:44:10',
+        'updated_at' => '2026-03-19 16:44:10',
+        'two_factor_secret' => null,
+        'two_factor_recovery_codes' => null,
+        'two_factor_confirmed_at' => null,
+        'deleted_at' => '2026-03-19 16:44:10',
+    ],
+    'original' => Array &3 [
+        'id' => 1,
+        'name' => 'Electa Kihn',
+        'email' => 'vanessa11@example.com',
+        'email_verified_at' => '2026-03-19 16:44:10',
+        'password' => '$2y$04$JsEuv7qn8epqGHeKd86.3u4SC3HFEjyReaw8sJ2QdDBacCwD2Tozu',
+        'id_number' => '7140586402',
+        'phone' => '(442) 895-8334',
+        'address' => '656 Amaya Green Apt. 941\n
+Dejahtown, OK 60961-1270',
+        'remember_token' => 'zanO8bgp02PYqvlvRFnDvZUD6CuA3TvFvKG6RoFt0BstQ1fmQ2hgC6bYUdiO',
+        'current_team_id' => null,
+        'profile_photo_path' => null,
+        'created_at' => '2026-03-19 16:44:10',
+        'updated_at' => '2026-03-19 16:44:10',
+        'two_factor_secret' => null,
+        'two_factor_recovery_codes' => null,
+        'two_factor_confirmed_at' => null,
+        'deleted_at' => '2026-03-19 16:44:10',
+    ],
+    'changes' => Array &4 [],
+    'casts' => Array &5 [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+        'deleted_at' => 'datetime',
+    ],
+    'classCastCache' => Array &6 [],
+    'attributeCastCache' => Array &7 [],
+    'dateFormat' => null,
+    'appends' => Array &8 [
+        0 => 'profile_photo_url',
+    ],
+    'dispatchesEvents' => Array &9 [],
+    'observables' => Array &10 [],
+    'relations' => Array &11 [],
+    'touches' => Array &12 [],
+    'timestamps' => true,
+    'usesUniqueIds' => false,
+    'hidden' => Array &13 [
+        0 => 'password',
+        1 => 'remember_token',
+        2 => 'two_factor_recovery_codes',
+        3 => 'two_factor_secret',
+    ],
+    'visible' => Array &14 [],
+    'fillable' => Array &15 [
+        0 => 'name',
+        1 => 'email',
+        2 => 'password',
+        3 => 'phone',
+        4 => 'address',
+        5 => 'id_number',
+    ],
+    'guarded' => Array &16 [
+        0 => '*',
+    ],
+    'authPasswordName' => 'password',
+    'rememberTokenName' => 'remember_token',
+    'guard_name' => 'web',
+    'accessToken' => null,
+    'roleClass' => null,
+    'permissionClass' => null,
+    'wildcardClass' => null,
+    'forceDeleting' => false,
+) is null.
+
+  at tests\Feature\DeleteAccountTest.php:15
+     11Ôûò     Livewire::test(DeleteUserForm::class)
+     12Ôûò         ->set('password', 'password')
+     13Ôûò         ->call('deleteUser');
+     14Ôûò 
+  Ô×£  15Ôûò     expect($user->fresh())->toBeNull();
+     16Ôûò })->skip(function () {
+     17Ôûò     return ! Features::hasAccountDeletionFeatures();
+     18Ôûò }, 'Account deletion is not enabled.');
+     19Ôûò
+
+  1   tests\Feature\DeleteAccountTest.php:15
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeaÔÇª   
+  Expected response status code [200] but received 302.
+Failed asserting that 302 is identical to 200.
+
+  at tests\Feature\ExampleTest.php:6
+      2Ôûò 
+      3Ôûò it('returns a successful response', function () {
+      4Ôûò     $response = $this->get('/');
+      5Ôûò 
+  Ô×£   6Ôûò     $response->assertStatus(200);
+      7Ôûò });
+      8Ôûò
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeaÔÇª   
+  The user is not authenticated
+Failed asserting that false is true.
+
+  at tests\Feature\RegistrationTest.php:31
+     27Ôûò         'password_confirmation' => 'password',
+     28Ôûò         'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature(),
+     29Ôûò     ]);
+     30Ôûò 
+  Ô×£  31Ôûò     $this->assertAuthenticated();
+     32Ôûò     $response->assertRedirect(route('dashboard', absolute: false));
+     33Ôûò })->skip(function () {
+     34Ôûò     return ! Features::enabled(Features::registration());
+     35Ôûò }, 'Registration support is not enabled.');
+
+
+  Tests:    4 failed, 7 skipped, 26 passed (59 assertions)
+  Duration: 26.24s
+

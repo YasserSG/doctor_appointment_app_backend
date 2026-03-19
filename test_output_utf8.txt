@@ -1,0 +1,35 @@
+﻿
+Fatal error: Uncaught AssertionError: assert(interface_exists($subscriberInterface)) in C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php:263
+Stack trace:
+#0 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(263): assert(false, 'assert(interfac...')
+#1 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(167): PHPUnit\Event\Facade->registerDefaultTypes(Object(PHPUnit\Event\TypeMap))
+#2 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(155): PHPUnit\Event\Facade->typeMap()
+#3 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(137): PHPUnit\Event\Facade->deferredDispatcher()
+#4 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(50): PHPUnit\Event\Facade->createDispatchingEmitter()
+#5 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(37): PHPUnit\Event\Facade->__construct()
+#6 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\nunomaduro\collision\src\Adapters\Phpunit\Subscribers\EnsurePrinterIsRegisteredSubscriber.php(306): PHPUnit\Event\Facade::instance()
+#7 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\nunomaduro\collision\src\Adapters\Phpunit\Autoload.php(11): NunoMaduro\Collision\Adapters\Phpunit\Subscribers\EnsurePrinterIsRegisteredSubscriber::register()
+#8 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\composer\autoload_real.php(41): require('C:\\Users\\ZERO\\P...')
+#9 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\composer\autoload_real.php(45): {closure}('a1cfe24d14977df...', 'C:\\Users\\ZERO\\P...')
+#10 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\autoload.php(22): ComposerAutoloaderInitc514d8f7b9fc5970bdd94287905ef584::getLoader()
+#11 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\pestphp\pest\bin\pest(129): include_once('C:\\Users\\ZERO\\P...')
+#12 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\pestphp\pest\bin\pest(192): {closure}()
+#13 {main}
+  thrown in C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php on line 263
+PHP Fatal error:  Uncaught AssertionError: assert(interface_exists($subscriberInterface)) in C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php:263
+Stack trace:
+#0 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(263): assert(false, 'assert(interfac...')
+#1 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(167): PHPUnit\Event\Facade->registerDefaultTypes(Object(PHPUnit\Event\TypeMap))
+#2 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(155): PHPUnit\Event\Facade->typeMap()
+#3 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(137): PHPUnit\Event\Facade->deferredDispatcher()
+#4 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(50): PHPUnit\Event\Facade->createDispatchingEmitter()
+#5 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php(37): PHPUnit\Event\Facade->__construct()
+#6 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\nunomaduro\collision\src\Adapters\Phpunit\Subscribers\EnsurePrinterIsRegisteredSubscriber.php(306): PHPUnit\Event\Facade::instance()
+#7 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\nunomaduro\collision\src\Adapters\Phpunit\Autoload.php(11): NunoMaduro\Collision\Adapters\Phpunit\Subscribers\EnsurePrinterIsRegisteredSubscriber::register()
+#8 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\composer\autoload_real.php(41): require('C:\\Users\\ZERO\\P...')
+#9 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\composer\autoload_real.php(45): {closure}('a1cfe24d14977df...', 'C:\\Users\\ZERO\\P...')
+#10 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\autoload.php(22): ComposerAutoloaderInitc514d8f7b9fc5970bdd94287905ef584::getLoader()
+#11 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\pestphp\pest\bin\pest(129): include_once('C:\\Users\\ZERO\\P...')
+#12 C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\pestphp\pest\bin\pest(192): {closure}()
+#13 {main}
+  thrown in C:\Users\ZERO\PhpstormProjects\Doctor-Appointment-main\vendor\phpunit\phpunit\src\Event\Facade.php on line 263
