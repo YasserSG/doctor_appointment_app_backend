@@ -35,7 +35,9 @@ class AppointmentController extends Controller
             'reason'     => 'required|string',
         ]);
 
-        Appointment::create($request->all());
+        $appointment = Appointment::create($request->all());
+
+        \Illuminate\Support\Facades\Mail::to($appointment->patient->user->email)->send(new \App\Mail\AppointmentCreated($appointment));
 
         session()->flash('alert', [
             'type'    => 'success',
