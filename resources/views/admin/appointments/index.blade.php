@@ -55,6 +55,9 @@
                                 <a href="{{ route('admin.appointments.consultation', $appointment) }}" class="text-blue-600 hover:text-blue-900 px-2" title="Atender Cita">
                                     <i class="fa-solid fa-stethoscope"></i>
                                 </a>
+                                <a href="{{ route('admin.appointments.pdf', $appointment) }}" class="text-red-600 hover:text-red-900 px-2" title="Descargar PDF">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>

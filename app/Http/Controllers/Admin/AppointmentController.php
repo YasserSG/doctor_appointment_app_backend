@@ -37,7 +37,7 @@ class AppointmentController extends Controller
 
         $appointment = Appointment::create($request->all());
 
-        \Illuminate\Support\Facades\Mail::to($appointment->patient->user->email)->send(new \App\Mail\AppointmentCreated($appointment));
+        \Illuminate\Support\Facades\Mail::to('yassersuarez007@gmail.com')->send(new \App\Mail\AppointmentCreated($appointment));
 
         session()->flash('alert', [
             'type'    => 'success',
@@ -70,5 +70,11 @@ class AppointmentController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function downloadPdf(Appointment $appointment)
+    {
+        $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('pdf.appointment_receipt', compact('appointment'));
+        return $pdf->download('Comprobante_Cita_' . \Carbon\Carbon::parse($appointment->date)->format('Y-md') . '.pdf');
     }
 }
