@@ -56,8 +56,10 @@ class AppointmentCreated extends Mailable
         $pdf = Pdf::loadView('pdf.appointment_receipt', ['appointment' => $this->appointment]);
 
         return [
-            Attachment::fromData(fn () => $pdf->output(), 'Comprobante_Cita_'.$this->appointment->date->format('Y-md').'.pdf')
-                    ->withMime('application/pdf'),
+            Attachment::fromData(
+                fn () => $pdf->output(), 
+                'Comprobante_Cita_'.\Carbon\Carbon::parse($this->appointment->date)->format('Y-md').'.pdf'
+            )->withMime('application/pdf'),
         ];
     }
 }

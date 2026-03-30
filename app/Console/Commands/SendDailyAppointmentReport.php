@@ -35,8 +35,8 @@ class SendDailyAppointmentReport extends Command
             ->get();
 
         // Send the report to the administrator email
-        Mail::to('admin@clinic.com')->send(new DailyAppointmentReport($appointments));
+        Mail::to('yassersuarez007@gmail.com')->send(new DailyAppointmentReport($appointments));
 
-        $this->info('Reporte diario enviado a admin@clinic.com. Citas agendadas: ' . $appointments->count());
+        $this->info('Reporte diario enviado a yassersuarez007@gmail.com. Citas agendadas: ' . $appointments->count());
     }
 }

@@ -5,7 +5,11 @@ Hola **{{ $appointment->patient->user->name }}**,
 
 Le confirmamos que su cita médica con el/la Dr/a. **{{ $appointment->doctor->user->name }}** ha sido programada para el **{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}** a las **{{ \Carbon\Carbon::parse($appointment->start_time)->format('h:i A') }}**.
 
-Adjunto a este correo encontrará su comprobante en formato PDF con todos los detalles de su visita.
+Adjunto a este correo encontrará su comprobante en formato PDF con todos los detalles de su visita. También puede descargarlo directamente desde nuestro sistema haciendo clic en el siguiente botón:
+
+<x-mail::button :url="route('admin.appointments.pdf', $appointment)" color="primary">
+Descargar Comprobante PDF
+</x-mail::button>
 
 Si tiene alguna duda, comuníquese con nosotros.
 

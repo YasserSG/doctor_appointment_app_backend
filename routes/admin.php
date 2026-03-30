@@ -22,6 +22,7 @@ Route::middleware([
     Route::resource('users', UserController::class);
 
     // Gestión de Pacientes
+    Route::post('patients/import', [\App\Http\Controllers\Admin\PatientImportController::class, 'store'])->name('patients.import');
     Route::resource('patients', \App\Http\Controllers\Admin\PatientController::class)->only(['index', 'create', 'edit', 'update']);
 
     // Gestión de Doctores
@@ -35,4 +36,7 @@ Route::middleware([
 
     // Consulta de citas
     Route::get('appointments/{appointment}/consultation', [\App\Http\Controllers\Admin\AppointmentController::class, 'consultation'])->name('appointments.consultation');
+
+    // Descargar PDF de cita
+    Route::get('appointments/{appointment}/pdf', [\App\Http\Controllers\Admin\AppointmentController::class, 'downloadPdf'])->name('appointments.pdf');
 });
